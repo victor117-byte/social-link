@@ -7,7 +7,7 @@ import { Hexagon, Zap, MessageCircle, CirclePlay, FolderGit2 } from "lucide-reac
 const Index = () => {
   // Actualizar el título de la página
   useEffect(() => {
-    document.title = "@tunombre - Enlaces";
+    document.title = "@Victor Hernandez - Enlaces";
     
     // Agregar fuente Orbitron de Google Fonts
     const link = document.createElement('link');
@@ -28,15 +28,15 @@ const Index = () => {
           <div className="border border-cyan-500/30 p-1 rounded-full shadow-[0_0_5px_rgba(0,195,255,0.2)]">
             <Avatar className="h-24 w-24 border-[2px] border-cyan-500/40 bg-[#080D16]">
               <img 
-                src="/lovable-uploads/47269266-23a9-4687-884a-aaad7c2e3281.png" 
+                src="/lovable-uploads/3dae546f-a277-4c6b-9c19-35cb10966ba5.png" 
                 alt="Foto de perfil" 
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover object-center"
               />
             </Avatar>
           </div>
-          <h1 className="mt-5 text-3xl font-bold text-cyan-400">@tunombre</h1>
+          <h1 className="mt-5 text-3xl font-bold text-cyan-400">@Victor Hernandez</h1>
           <div className="mt-2 px-4 py-1 rounded-full border border-cyan-500/20 bg-[#080D16]/80">
-            <p className="text-cyan-400/80 text-sm tracking-wide">MGMT: tunombre@ejemplo.com</p>
+            <p className="text-cyan-400/80 text-sm tracking-wide">MGMT: victorhernandez@ejemplo.com</p>
           </div>
         </div>
 
@@ -80,7 +80,7 @@ const Index = () => {
               title="Mi último video en YouTube"
               link="#"
               showImage={true}
-              imageUrl="/lovable-uploads/47269266-23a9-4687-884a-aaad7c2e3281.png"
+              imageUrl="/lovable-uploads/3dae546f-a277-4c6b-9c19-35cb10966ba5.png"
               delay={500}
             />
           </div>
@@ -89,7 +89,7 @@ const Index = () => {
         {/* Footer */}
         <footer className="mt-12 text-cyan-500/50 text-sm text-center animate-fade-in" style={{ animationDelay: "0.6s" }}>
           <div className="border border-cyan-500/20 inline-block px-4 py-2 bg-[#080D16]/50 rounded-lg">
-            © 2025 @tunombre - Todos los derechos reservados
+            © 2025 @Victor Hernandez - Todos los derechos reservados
           </div>
         </footer>
       </div>
