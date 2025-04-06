@@ -28,9 +28,11 @@ export function LinkCard({
     <a
       href={link}
       className={cn(
-        "group w-full flex items-center justify-between tron-card p-4 transition-all duration-300",
-        "opacity-0 animate-slide-in",
-        isPressed ? "scale-[0.98] brightness-110" : ""
+        "group w-full flex items-center justify-between p-4 transition-all duration-300",
+        "opacity-0 animate-slide-in rounded-lg",
+        "bg-[#0C1421]/90 backdrop-blur-sm border border-cyan-500/20 hover:border-cyan-500/40",
+        "hover:shadow-[0_0_10px_rgba(0,195,255,0.2)] hover:translate-y-[-2px]",
+        isPressed ? "scale-[0.98]" : ""
       )}
       target="_blank"
       rel="noopener noreferrer"
@@ -43,19 +45,19 @@ export function LinkCard({
     >
       <div className="flex items-center gap-4 flex-1">
         {icon && (
-          <div className="tron-icon text-2xl flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full border border-cyan-500/30 bg-[#080D16]">
+          <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full border border-cyan-500/20 bg-[#080D16] text-cyan-400">
             {icon}
           </div>
         )}
         {showImage && imageUrl && !icon && (
-          <div className="w-12 h-12 rounded overflow-hidden shrink-0 border border-cyan-500/50 tron-glow">
+          <div className="w-12 h-12 rounded overflow-hidden shrink-0 border border-cyan-500/20">
             <img src={imageUrl} alt={title} className="w-full h-full object-cover" />
           </div>
         )}
         <div className="flex-1">
-          <h3 className="font-medium tron-text text-lg">{title}</h3>
+          <h3 className="font-medium text-lg text-cyan-400">{title}</h3>
           {description && (
-            <p className="text-sm text-gray-400 group-hover:text-cyan-300/80 transition-colors">
+            <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">
               {description}
             </p>
           )}
@@ -63,18 +65,15 @@ export function LinkCard({
       </div>
       <div className="flex items-center">
         <div 
-          className={cn(
-            "opacity-0 group-hover:opacity-100 transition-opacity transform translate-x-0 group-hover:translate-x-1",
-            "transition-all duration-300"
-          )}
+          className="text-cyan-400 opacity-70 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-1"
         >
-          <ArrowRight size={20} className="tron-text" />
+          <ArrowRight size={20} />
         </div>
         <button 
           className="text-gray-500 hover:text-cyan-400 p-1 rounded-full hover:bg-cyan-900/20 ml-2"
           onClick={(e) => {
             e.preventDefault();
-            // Aquí se podría implementar un menú de opciones
+            // Options menu could be implemented here
           }}
         >
           <MoreVertical size={16} />
