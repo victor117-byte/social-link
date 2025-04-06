@@ -11,6 +11,7 @@ interface LinkCardProps {
   imageUrl?: string;
   icon?: React.ReactNode;
   delay?: number;
+  theme?: "legacy" | "ares";
 }
 
 export function LinkCard({ 
@@ -20,18 +21,24 @@ export function LinkCard({
   showImage = false,
   imageUrl,
   icon,
-  delay = 0
+  delay = 0,
+  theme = "legacy"
 }: LinkCardProps) {
   const [isPressed, setIsPressed] = useState(false);
-
+  const isAres = theme === "ares";
+  
+  const accentColor = isAres ? "red" : "cyan";
+  const bgColor = isAres ? "[#1D0F0F]" : "[#0C1421]";
+  const darkBgColor = isAres ? "[#180808]" : "[#080D16]";
+  
   return (
     <a
       href={link}
       className={cn(
         "group w-full flex items-center justify-between p-4 transition-all duration-300",
         "opacity-0 animate-slide-in rounded-lg",
-        "bg-[#0C1421]/90 backdrop-blur-sm border border-cyan-500/20 hover:border-cyan-500/40",
-        "hover:shadow-[0_0_10px_rgba(0,195,255,0.2)] hover:translate-y-[-2px]",
+        `bg-${bgColor}/90 backdrop-blur-sm border border-${accentColor}-500/20 hover:border-${accentColor}-500/40`,
+        `hover:shadow-[0_0_10px_rgba(${isAres ? "255,0,0" : "0,195,255"},0.2)] hover:translate-y-[-2px]`,
         isPressed ? "scale-[0.98]" : ""
       )}
       target="_blank"
@@ -45,17 +52,17 @@ export function LinkCard({
     >
       <div className="flex items-center gap-4 flex-1">
         {icon && (
-          <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full border border-cyan-500/20 bg-[#080D16] text-cyan-400">
+          <div className={`flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full border border-${accentColor}-500/20 bg-${darkBgColor} text-${accentColor}-400`}>
             {icon}
           </div>
         )}
         {showImage && imageUrl && !icon && (
-          <div className="w-12 h-12 rounded overflow-hidden shrink-0 border border-cyan-500/20">
+          <div className={`w-12 h-12 rounded overflow-hidden shrink-0 border border-${accentColor}-500/20`}>
             <img src={imageUrl} alt={title} className="w-full h-full object-cover" />
           </div>
         )}
         <div className="flex-1">
-          <h3 className="font-medium text-lg text-cyan-400">{title}</h3>
+          <h3 className={`font-medium text-lg text-${accentColor}-400`}>{title}</h3>
           {description && (
             <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">
               {description}
@@ -65,12 +72,12 @@ export function LinkCard({
       </div>
       <div className="flex items-center">
         <div 
-          className="text-cyan-400 opacity-70 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-1"
+          className={`text-${accentColor}-400 opacity-70 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-1`}
         >
           <ArrowRight size={20} />
         </div>
         <button 
-          className="text-gray-500 hover:text-cyan-400 p-1 rounded-full hover:bg-cyan-900/20 ml-2"
+          className={`text-gray-500 hover:text-${accentColor}-400 p-1 rounded-full hover:bg-${accentColor}-900/20 ml-2`}
           onClick={(e) => {
             e.preventDefault();
             // Options menu could be implemented here
