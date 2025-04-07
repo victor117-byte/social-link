@@ -12,7 +12,7 @@ const Index = () => {
   
   // Actualizar el título de la página
   useEffect(() => {
-    document.title = "@Victor Hernandez - Enlaces";
+    document.title = "@Victor.10001";
     
     // Agregar fuente Orbitron de Google Fonts
     const link = document.createElement('link');
@@ -54,9 +54,9 @@ const Index = () => {
               />
             </Avatar>
           </div>
-          <h1 className={`mt-5 text-3xl font-bold text-${accentColor}-400`}>@Victor Hernandez</h1>
+          <h1 className={`mt-5 text-3xl font-bold text-${accentColor}-400`}>@Victor.10001</h1>
           <div className={`mt-2 px-4 py-1 rounded-full border border-${accentColor}-500/20 bg-${bgColor}/80`}>
-            <p className={`text-${accentColor}-400/80 text-sm tracking-wide`}>MGMT: victorhernandez@ejemplo.com</p>
+            <p className={`text-${accentColor}-400/80 text-sm tracking-wide`}>MGMT: victor117.berrios@gmail.com</p>
           </div>
         </div>
 
@@ -64,7 +64,7 @@ const Index = () => {
         <div className="w-full space-y-4 mb-10">
           <LinkCard 
             title="Podcast" 
-            description="Escucha mis episodios sobre tecnología y creatividad"
+            description="Escucha mis episodios sobre temas random"
             link="#"
             icon={<CirclePlay className="w-6 h-6" />}
             delay={100}
@@ -72,7 +72,7 @@ const Index = () => {
           />
           <LinkCard 
             title="Experimentos" 
-            description="Proyectos creativos y pruebas de concepto"
+            description="Proyectos en mis timepos libres"
             link="#"
             icon={<Hexagon className="w-6 h-6" />}
             delay={200}
@@ -80,23 +80,15 @@ const Index = () => {
           />
           <LinkCard 
             title="Contacto" 
-            description="Hablemos sobre colaboraciones y oportunidades"
+            description="Hablemos sobre colaboraciones y oportunidades!!!"
             link="#"
             icon={<MessageCircle className="w-6 h-6" />}
             delay={300}
             theme={theme}
           />
-          <LinkCard 
-            title="Proyectos" 
-            description="Conoce mis trabajos más destacados"
-            link="#"
-            icon={<FolderGit2 className="w-6 h-6" />}
-            delay={400}
-            theme={theme}
-          />
         </div>
 
-        {/* Más contenido */}
+        {/* Más contenido
         <div className="mt-8 w-full animate-fade-in" style={{ animationDelay: "0.5s" }}>
           <h2 className={`text-center mb-4 text-${accentColor}-400 uppercase text-sm tracking-[4px]`}>Más contenido</h2>
           <div className="w-full">
@@ -109,7 +101,7 @@ const Index = () => {
               theme={theme}
             />
           </div>
-        </div>
+        </div> */}
 
         {/* Footer */}
         <footer className={`mt-12 text-${accentColor}-500/50 text-sm text-center animate-fade-in`} style={{ animationDelay: "0.6s" }}>
