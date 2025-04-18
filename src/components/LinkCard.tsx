@@ -11,7 +11,7 @@ interface LinkCardProps {
   imageUrl?: string;
   icon?: React.ReactNode;
   delay?: number;
-  theme?: "legacy" | "ares";
+  theme?: "default" | "alternate";
 }
 
 export function LinkCard({ 
@@ -22,14 +22,14 @@ export function LinkCard({
   imageUrl,
   icon,
   delay = 0,
-  theme = "legacy"
+  theme = "default"
 }: LinkCardProps) {
   const [isPressed, setIsPressed] = useState(false);
-  const isAres = theme === "ares";
+  const isAlternate = theme === "alternate";
   
-  const accentColor = isAres ? "red" : "cyan";
-  const bgColor = isAres ? "[#1D0F0F]" : "[#0C1421]";
-  const darkBgColor = isAres ? "[#180808]" : "[#080D16]";
+  const accentColor = isAlternate ? "red" : "cyan";
+  const bgColor = isAlternate ? "[#1D0F0F]" : "[#0C1421]";
+  const darkBgColor = isAlternate ? "[#180808]" : "[#080D16]";
   
   return (
     <a
@@ -38,7 +38,7 @@ export function LinkCard({
         "group w-full flex items-center justify-between p-4 transition-all duration-300",
         "opacity-0 animate-slide-in rounded-lg",
         `bg-${bgColor}/90 backdrop-blur-sm border border-${accentColor}-500/20 hover:border-${accentColor}-500/40`,
-        `hover:shadow-[0_0_10px_rgba(${isAres ? "255,0,0" : "0,195,255"},0.2)] hover:translate-y-[-2px]`,
+        `hover:shadow-[0_0_10px_rgba(${isAlternate ? "255,0,0" : "0,195,255"},0.2)] hover:translate-y-[-2px]`,
         isPressed ? "scale-[0.98]" : ""
       )}
       target="_blank"
