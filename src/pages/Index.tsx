@@ -1,4 +1,3 @@
-
 import { Avatar } from "@/components/ui/avatar";
 import { LinkCard } from "@/components/LinkCard";
 import { useEffect } from "react";
@@ -71,8 +70,8 @@ const Index = () => {
             theme={theme}
           />
           <LinkCard 
-            title="Experimentos" 
-            description="Proyectos en mis timepos libres"
+            title="Proyectos Profesionales" 
+            description="Desarrollo de proyectos innovadores y soluciones tecnológicas"
             link="#"
             icon={<Hexagon className="w-6 h-6" />}
             delay={200}
