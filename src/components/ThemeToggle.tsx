@@ -18,9 +18,6 @@ export function ThemeToggle() {
 
   return (
     <div className="flex items-center space-x-2 fixed top-4 right-4 bg-[#0C1421]/90 backdrop-blur-sm border border-cyan-500/20 p-2 rounded-lg z-50">
-      <span className={`text-sm ${isAlternate ? 'text-red-400' : 'text-cyan-400'}`}>
-        {isAlternate ? 'Dark' : 'Light'}
-      </span>
       <Switch
         checked={isAlternate}
         onCheckedChange={toggleTheme}
