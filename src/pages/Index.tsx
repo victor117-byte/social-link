@@ -7,7 +7,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 
 const Index = () => {
   const { theme } = useTheme();
-  const isAres = theme === "ares";
+  const isAlternate = theme === "alternate";
   
   // Actualizar el título de la página
   useEffect(() => {
@@ -25,18 +25,18 @@ const Index = () => {
   }, []);
 
   // Dynamic theme classes
-  const accentColor = isAres ? "red" : "cyan";
-  const bgColor = isAres ? "[#1B0A0A]" : "[#080D16]";
-  const cardBgColor = isAres ? "[#1D0F0F]" : "[#0C1421]";
-  const shadowColor = isAres ? "rgba(255,0,0,0.2)" : "rgba(0,195,255,0.2)";
+  const accentColor = isAlternate ? "red" : "cyan";
+  const bgColor = isAlternate ? "[#1B0A0A]" : "[#080D16]";
+  const cardBgColor = isAlternate ? "[#1D0F0F]" : "[#0C1421]";
+  const shadowColor = isAlternate ? "rgba(255,0,0,0.2)" : "rgba(0,195,255,0.2)";
 
   return (
     <div className={`min-h-screen bg-transparent text-white flex flex-col items-center px-4 py-12 md:py-16`}
          style={{
            backgroundImage: `
              linear-gradient(0deg, rgba(10, 15, 27, 0.9) 0%, rgba(10, 15, 27, 0.95) 100%),
-             repeating-linear-gradient(to right, rgba(${isAres ? "255, 0, 0" : "0, 195, 255"}, 0.05) 0px, rgba(${isAres ? "255, 0, 0" : "0, 195, 255"}, 0.05) 1px, transparent 1px, transparent 50px),
-             repeating-linear-gradient(to bottom, rgba(${isAres ? "255, 0, 0" : "0, 195, 255"}, 0.05) 0px, rgba(${isAres ? "255, 0, 0" : "0, 195, 255"}, 0.05) 1px, transparent 1px, transparent 50px)
+             repeating-linear-gradient(to right, rgba(${isAlternate ? "255, 0, 0" : "0, 195, 255"}, 0.05) 0px, rgba(${isAlternate ? "255, 0, 0" : "0, 195, 255"}, 0.05) 1px, transparent 1px, transparent 50px),
+             repeating-linear-gradient(to bottom, rgba(${isAlternate ? "255, 0, 0" : "0, 195, 255"}, 0.05) 0px, rgba(${isAlternate ? "255, 0, 0" : "0, 195, 255"}, 0.05) 1px, transparent 1px, transparent 50px)
            `
          }}
     >

@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 export function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const isAres = theme === "ares";
+  const isAlternate = theme === "alternate";
 
   // Avoid hydration mismatch
   useEffect(() => {
@@ -18,15 +18,15 @@ export function ThemeToggle() {
 
   return (
     <div className="flex items-center space-x-2 fixed top-4 right-4 bg-[#0C1421]/90 backdrop-blur-sm border border-cyan-500/20 p-2 rounded-lg z-50">
-      <span className={`text-sm ${isAres ? 'text-red-400' : 'text-cyan-400'}`}>
-        {isAres ? 'Ares' : 'Legacy'}
+      <span className={`text-sm ${isAlternate ? 'text-red-400' : 'text-cyan-400'}`}>
+        {isAlternate ? 'Dark' : 'Light'}
       </span>
       <Switch
-        checked={isAres}
+        checked={isAlternate}
         onCheckedChange={toggleTheme}
-        className={isAres ? 'bg-red-500 data-[state=checked]:bg-red-500 border-red-400' : 'bg-cyan-500 data-[state=checked]:bg-cyan-500 border-cyan-400'}
+        className={isAlternate ? 'bg-red-500 data-[state=checked]:bg-red-500 border-red-400' : 'bg-cyan-500 data-[state=checked]:bg-cyan-500 border-cyan-400'}
       />
-      {isAres ? (
+      {isAlternate ? (
         <Sun className="h-4 w-4 text-red-400" />
       ) : (
         <Moon className="h-4 w-4 text-cyan-400" />

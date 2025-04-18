@@ -1,7 +1,7 @@
 
 import React, { createContext, useContext, useState, ReactNode } from "react";
 
-type Theme = "legacy" | "ares";
+type Theme = "default" | "alternate";
 
 interface ThemeContextType {
   theme: Theme;
@@ -11,10 +11,10 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [theme, setTheme] = useState<Theme>("legacy");
+  const [theme, setTheme] = useState<Theme>("default");
 
   const toggleTheme = () => {
-    setTheme(theme === "legacy" ? "ares" : "legacy");
+    setTheme(theme === "default" ? "alternate" : "default");
   };
 
   return (
