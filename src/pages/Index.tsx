@@ -1,106 +1,95 @@
-import { Avatar } from "@/components/ui/avatar";
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { LinkCard } from "@/components/LinkCard";
 import { useEffect } from "react";
-import { Hexagon, Zap, MessageCircle, CirclePlay, FolderGit2 } from "lucide-react";
+import { Hexagon, MessageCircle } from "lucide-react";
 import { useTheme } from "@/contexts/ThemeContext";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const Index = () => {
   const { theme } = useTheme();
-  const isAlternate = theme === "alternate";
   
-  // Actualizar el título de la página
   useEffect(() => {
-    document.title = "@Victor.10001";
-    
-    // Agregar fuente Orbitron de Google Fonts
-    const link = document.createElement('link');
-    link.href = 'https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap';
-    link.rel = 'stylesheet';
-    document.head.appendChild(link);
-    
-    return () => {
-      document.head.removeChild(link);
-    };
+    document.title = "@Victor.10001 - Portafolio Profesional";
   }, []);
 
-  // Dynamic theme classes
-  const accentColor = isAlternate ? "red" : "cyan";
-  const bgColor = isAlternate ? "[#1B0A0A]" : "[#080D16]";
-  const cardBgColor = isAlternate ? "[#1D0F0F]" : "[#0C1421]";
-  const shadowColor = isAlternate ? "rgba(255,0,0,0.2)" : "rgba(0,195,255,0.2)";
-
   return (
-    <div className={`min-h-screen bg-transparent text-white flex flex-col items-center px-4 py-12 md:py-16`}
-         style={{
-           backgroundImage: `
-             linear-gradient(0deg, rgba(10, 15, 27, 0.9) 0%, rgba(10, 15, 27, 0.95) 100%),
-             repeating-linear-gradient(to right, rgba(${isAlternate ? "255, 0, 0" : "0, 195, 255"}, 0.05) 0px, rgba(${isAlternate ? "255, 0, 0" : "0, 195, 255"}, 0.05) 1px, transparent 1px, transparent 50px),
-             repeating-linear-gradient(to bottom, rgba(${isAlternate ? "255, 0, 0" : "0, 195, 255"}, 0.05) 0px, rgba(${isAlternate ? "255, 0, 0" : "0, 195, 255"}, 0.05) 1px, transparent 1px, transparent 50px)
-           `
-         }}
-    >
-      <ThemeToggle />
-      <div className="w-full max-w-md flex flex-col items-center">
-        {/* Perfil */}
-        <div className="flex flex-col items-center mb-10 animate-fade-in">
-          <div className={`border border-${accentColor}-500/30 p-1 rounded-full shadow-[0_0_5px_${shadowColor}]`}>
-            <Avatar className={`h-24 w-24 border-[2px] border-${accentColor}-500/40 bg-${bgColor}`}>
-              <img 
-                src="/lovable-uploads/3dae546f-a277-4c6b-9c19-35cb10966ba5.png" 
-                alt="Foto de perfil" 
-                className="h-full w-full object-cover object-center"
-              />
-            </Avatar>
+    <div className="min-h-screen bg-background">
+      {/* Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
+        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+          <div className="font-semibold text-lg text-foreground">
+            @Victor.10001
           </div>
-          <h1 className={`mt-5 text-3xl font-bold text-${accentColor}-400`}>@Victor.10001</h1>
-          <div className={`mt-2 px-4 py-1 rounded-full border border-${accentColor}-500/20 bg-${bgColor}/80`}>
-            <p className={`text-${accentColor}-400/80 text-sm tracking-wide`}>MGMT: victor117.berrios@gmail.com</p>
-          </div>
+          <ThemeToggle />
         </div>
+      </nav>
 
-        {/* Enlaces */}
-        <div className="w-full space-y-4 mb-10">
-          <LinkCard 
-            title="Portafolio" 
-            description="Mis trabajos y proyectos creativos"
-            link="#"
-            icon={<Hexagon className="w-6 h-6" />}
-            delay={100}
-            theme={theme}
-          />
-          <LinkCard 
-            title="Contacto" 
-            description="¡Hablemos! Estoy abierto a colaboraciones"
-            link="#"
-            icon={<MessageCircle className="w-6 h-6" />}
-            delay={200}
-            theme={theme}
-          />
-        </div>
+      {/* Hero Section */}
+      <main className="pt-20 pb-16">
+        <div className="container mx-auto px-6 max-w-2xl">
+          {/* Profile Section */}
+          <section className="text-center mb-16">
+            <div className="animate-scale-in delay-100 mb-8">
+              <div className="relative inline-block">
+                <Avatar className="h-32 w-32 border-4 border-border/20 shadow-xl mx-auto animate-float">
+                  <AvatarImage 
+                    src="/lovable-uploads/3dae546f-a277-4c6b-9c19-35cb10966ba5.png" 
+                    alt="Victor Hernandez - Perfil profesional"
+                    className="object-cover"
+                  />
+                </Avatar>
+                <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur opacity-30"></div>
+              </div>
+            </div>
+            
+            <div className="animate-slide-up delay-200 space-y-6">
+              <div>
+                <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
+                  Victor Hernandez
+                </h1>
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-muted/50 border border-border/30">
+                  <span className="text-sm font-medium text-muted-foreground">
+                    victor117.berrios@gmail.com
+                  </span>
+                </div>
+              </div>
+              
+              <p className="text-xl text-muted-foreground max-w-lg mx-auto leading-relaxed">
+                Desarrollador creativo y profesional apasionado por la tecnología y la innovación
+              </p>
+            </div>
+          </section>
 
-        {/* Más contenido
-        <div className="mt-8 w-full animate-fade-in" style={{ animationDelay: "0.5s" }}>
-          <h2 className={`text-center mb-4 text-${accentColor}-400 uppercase text-sm tracking-[4px]`}>Más contenido</h2>
-          <div className="w-full">
+          {/* Links Section */}
+          <section className="space-y-4 mb-16">
             <LinkCard 
-              title="Mi último video en YouTube"
+              title="Portafolio" 
+              description="Explora mis trabajos y proyectos creativos"
               link="#"
-              showImage={true}
-              imageUrl="/lovable-uploads/3dae546f-a277-4c6b-9c19-35cb10966ba5.png"
-              delay={500}
+              icon={<Hexagon className="w-6 h-6" />}
+              delay={300}
               theme={theme}
             />
-          </div>
-        </div> */}
+            <LinkCard 
+              title="Contacto" 
+              description="¡Conectemos! Abierto a nuevas colaboraciones"
+              link="#"
+              icon={<MessageCircle className="w-6 h-6" />}
+              delay={400}
+              theme={theme}
+            />
+          </section>
 
-        {/* Footer */}
-        <footer className={`mt-12 text-${accentColor}-500/50 text-sm text-center animate-fade-in`} style={{ animationDelay: "0.6s" }}>
-          <div className={`border border-${accentColor}-500/20 inline-block px-4 py-2 bg-${bgColor}/50 rounded-lg`}>
-            © 2025 @Victor Hernandez - Todos los derechos reservados
-          </div>
-        </footer>
-      </div>
+          {/* Footer */}
+          <footer className="text-center animate-slide-up delay-500">
+            <div className="inline-flex items-center px-6 py-3 rounded-xl bg-card border border-border/50 shadow-sm">
+              <p className="text-sm text-muted-foreground">
+                © 2025 Victor Hernandez · Todos los derechos reservados
+              </p>
+            </div>
+          </footer>
+        </div>
+      </main>
     </div>
   );
 };

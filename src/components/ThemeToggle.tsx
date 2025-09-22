@@ -1,15 +1,14 @@
-
-import { Moon, Sun } from "lucide-react";
+import { Moon, Sun, Monitor } from "lucide-react";
 import { useTheme } from "@/contexts/ThemeContext";
 import { Switch } from "@/components/ui/switch";
 import { useState, useEffect } from "react";
+import { cn } from "@/lib/utils";
 
 export function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const isAlternate = theme === "alternate";
+  const isDark = theme === "alternate";
 
-  // Avoid hydration mismatch
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -17,17 +16,29 @@ export function ThemeToggle() {
   if (!mounted) return null;
 
   return (
-    <div className="flex items-center space-x-2 fixed top-4 right-4 bg-[#0C1421]/90 backdrop-blur-sm border border-cyan-500/20 p-2 rounded-lg z-50">
-      <Switch
-        checked={isAlternate}
-        onCheckedChange={toggleTheme}
-        className={isAlternate ? 'bg-red-500 data-[state=checked]:bg-red-500 border-red-400' : 'bg-cyan-500 data-[state=checked]:bg-cyan-500 border-cyan-400'}
-      />
-      {isAlternate ? (
-        <Sun className="h-4 w-4 text-red-400" />
-      ) : (
-        <Moon className="h-4 w-4 text-cyan-400" />
-      )}
+    <div className="flex items-center gap-3">
+      <div className={cn(
+        "flex items-center gap-2 px-3 py-2 rounded-xl",
+        "bg-card/50 backdrop-blur-sm border border-border/50",
+        "transition-all duration-300 hover:border-border"
+      )}>
+        <Sun className={cn(
+          "h-4 w-4 transition-colors",
+          !isDark ? "text-primary" : "text-muted-foreground"
+        )} />
+        
+        <Switch
+          checked={isDark}
+          onCheckedChange={toggleTheme}
+          className="data-[state=checked]:bg-primary data-[state=unchecked]:bg-muted"
+          aria-label="Cambiar tema"
+        />
+        
+        <Moon className={cn(
+          "h-4 w-4 transition-colors",
+          isDark ? "text-primary" : "text-muted-foreground"
+        )} />
+      </div>
     </div>
   );
 }
