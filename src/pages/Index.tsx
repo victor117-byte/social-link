@@ -67,17 +67,15 @@ const Index = () => {
               description="Explora mis trabajos y proyectos creativos"
               link="#"
               icon={<Hexagon className="w-6 h-6" />}
-              delay={300}
-              theme={theme}
-            />
-            <LinkCard 
-              title="Contacto" 
-              description="¡Conectemos! Abierto a nuevas colaboraciones"
-              link="#"
-              icon={<MessageCircle className="w-6 h-6" />}
-              delay={400}
-              theme={theme}
-            />
+            delay={300}
+          />
+          <LinkCard 
+            title="Contacto" 
+            description="¡Conectemos! Abierto a nuevas colaboraciones"
+            link="#"
+            icon={<MessageCircle className="w-6 h-6" />}
+            delay={400}
+          />
           </section>
 
           {/* Footer */}

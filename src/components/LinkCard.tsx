@@ -10,7 +10,6 @@ interface LinkCardProps {
   imageUrl?: string;
   icon?: React.ReactNode;
   delay?: number;
-  theme?: "default" | "alternate";
 }
 
 export function LinkCard({ 
@@ -20,8 +19,7 @@ export function LinkCard({
   showImage = false,
   imageUrl,
   icon,
-  delay = 0,
-  theme = "default"
+  delay = 0
 }: LinkCardProps) {
   const [isHovered, setIsHovered] = useState(false);
   

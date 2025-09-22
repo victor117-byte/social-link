@@ -1,4 +1,4 @@
-import { Moon, Sun, Monitor } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 import { useTheme } from "@/contexts/ThemeContext";
 import { Switch } from "@/components/ui/switch";
 import { useState, useEffect } from "react";
@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 export function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const isDark = theme === "alternate";
+  const isDark = theme === "dark";
 
   useEffect(() => {
     setMounted(true);
@@ -19,7 +19,7 @@ export function ThemeToggle() {
     <div className="flex items-center gap-3">
       <div className={cn(
         "flex items-center gap-2 px-3 py-2 rounded-xl",
-        "bg-card/50 backdrop-blur-sm border border-border/50",
+        "bg-card/80 backdrop-blur-sm border border-border/50",
         "transition-all duration-300 hover:border-border"
       )}>
         <Sun className={cn(
