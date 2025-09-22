@@ -62,27 +62,19 @@ const Index = () => {
         {/* Enlaces */}
         <div className="w-full space-y-4 mb-10">
           <LinkCard 
-            title="Podcast" 
-            description="Escucha mis episodios sobre temas random"
+            title="Portafolio" 
+            description="Mis trabajos y proyectos creativos"
             link="#"
-            icon={<CirclePlay className="w-6 h-6" />}
+            icon={<Hexagon className="w-6 h-6" />}
             delay={100}
             theme={theme}
           />
           <LinkCard 
-            title="Proyectos Profesionales" 
-            description="Desarrollo de proyectos innovadores y soluciones tecnológicas"
-            link="#"
-            icon={<Hexagon className="w-6 h-6" />}
-            delay={200}
-            theme={theme}
-          />
-          <LinkCard 
             title="Contacto" 
-            description="Hablemos sobre colaboraciones y oportunidades!!!"
+            description="¡Hablemos! Estoy abierto a colaboraciones"
             link="#"
             icon={<MessageCircle className="w-6 h-6" />}
-            delay={300}
+            delay={200}
             theme={theme}
           />
         </div>
