@@ -6,7 +6,7 @@ import { componentTagger } from "lovable-tagger";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   // Base path: necesario para GitHub Pages cuando se publica en /<repo>/
-  base: mode === "production" ? "/social-link-mosaic/" : "/",
+  base: mode === "production" ? "/social-link/" : "/",
   server: {
     host: "::",
     port: 8080,
