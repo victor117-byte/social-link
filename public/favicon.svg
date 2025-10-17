@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g1" x1="32" y1="16" x2="224" y2="240" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6366F1"/>
+      <stop offset="1" stop-color="#06B6D4"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="64" y1="48" x2="192" y2="208" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A78BFA"/>
+      <stop offset="1" stop-color="#22D3EE"/>
+    </linearGradient>
+  </defs>
+  <!-- Outer hexagon -->
+  <path d="M128 16L216 64V192L128 240L40 192V64L128 16Z" fill="url(#g1)" fill-opacity="0.12" stroke="url(#g1)" stroke-width="10" stroke-linejoin="round"/>
+  <!-- Inner hexagon (mosaic nod) -->
+  <path d="M128 76L176 102V154L128 180L80 154V102L128 76Z" fill="url(#g2)" fill-opacity="0.25" stroke="url(#g2)" stroke-width="8" stroke-linejoin="round"/>
+  <!-- Monogram V subtle -->
+  <path d="M96 108L128 172L160 108" stroke="#0EA5E9" stroke-opacity="0.9" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

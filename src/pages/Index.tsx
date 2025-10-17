@@ -34,7 +34,7 @@ const Index = () => {
                 <Avatar className="h-32 w-32 border-4 border-border/20 shadow-xl mx-auto animate-float">
                   <AvatarImage 
                     src="/lovable-uploads/3dae546f-a277-4c6b-9c19-35cb10966ba5.png" 
-                    alt="Victor Hernandez - Perfil profesional"
+                    alt="Víctor Hernández - Perfil profesional"
                     className="object-cover"
                   />
                 </Avatar>
@@ -45,7 +45,7 @@ const Index = () => {
             <div className="animate-slide-up delay-200 space-y-6">
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
-                  Victor Hernandez
+                  Víctor Hernández
                 </h1>
                 <div className="inline-flex items-center px-4 py-2 rounded-full bg-muted/50 border border-border/30">
                   <span className="text-sm font-medium text-muted-foreground">
@@ -55,7 +55,7 @@ const Index = () => {
               </div>
               
               <p className="text-xl text-muted-foreground max-w-lg mx-auto leading-relaxed">
-                Desarrollador creativo y profesional apasionado por la tecnología y la innovación
+                Desarrollador creativo y profesional, apasionado por la tecnología y la innovación.
               </p>
             </div>
           </section>
@@ -71,14 +71,14 @@ const Index = () => {
             />
             <LinkCard 
               title="The Grid Newsletter" 
-              description="Suscríbete a mi newsletter para recibir contenido exclusivo"
+              description="Suscríbete a mi boletín para recibir contenido exclusivo"
               link="https://cooperative-search-501.notion.site/The-Grid-Newsletter-28f191735b578086be20cb4aed0c25aa"
               icon={<Mail className="w-6 h-6" />}
               delay={350}
             />
             <LinkCard 
               title="Contacto" 
-              description="¡Conectemos! Abierto a nuevas colaboraciones"
+              description="¡Conectemos! Abierto a nuevas colaboraciones."
               link="#"
               icon={<MessageCircle className="w-6 h-6" />}
               delay={400}
@@ -89,7 +89,7 @@ const Index = () => {
           <footer className="text-center animate-slide-up delay-500">
             <div className="inline-flex items-center px-6 py-3 rounded-xl bg-card border border-border/50 shadow-sm">
               <p className="text-sm text-muted-foreground">
-                © 2025 Victor Hernandez · Todos los derechos reservados
+                © 2025 Víctor Hernández · Todos los derechos reservados
               </p>
             </div>
           </footer>
