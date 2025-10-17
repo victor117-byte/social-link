@@ -1,4 +1,5 @@
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import avatarPng from "@/../public/lovable-uploads/3dae546f-a277-4c6b-9c19-35cb10966ba5.png";
 import { LinkCard } from "@/components/LinkCard";
 import { useEffect } from "react";
 import { Hexagon, MessageCircle, Mail } from "lucide-react";
@@ -33,7 +34,7 @@ const Index = () => {
               <div className="relative inline-block">
                 <Avatar className="h-32 w-32 border-4 border-border/20 shadow-xl mx-auto animate-float">
                   <AvatarImage 
-                    src="/lovable-uploads/3dae546f-a277-4c6b-9c19-35cb10966ba5.png" 
+                    src={avatarPng}
                     alt="Víctor Hernández - Perfil profesional"
                     className="object-cover"
                   />
