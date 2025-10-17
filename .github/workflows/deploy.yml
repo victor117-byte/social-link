@@ -27,12 +27,6 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
-      # Habilita y configura GitHub Pages para este repo
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
-
       - name: Install dependencies
         run: npm install --no-audit --no-fund
 
