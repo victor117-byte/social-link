@@ -1,7 +1,7 @@
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { LinkCard } from "@/components/LinkCard";
 import { useEffect } from "react";
-import { Hexagon, MessageCircle } from "lucide-react";
+import { Hexagon, MessageCircle, Mail } from "lucide-react";
 import { useTheme } from "@/contexts/ThemeContext";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
@@ -67,15 +67,22 @@ const Index = () => {
               description="Explora mis trabajos y proyectos creativos"
               link="#"
               icon={<Hexagon className="w-6 h-6" />}
-            delay={300}
-          />
-          <LinkCard 
-            title="Contacto" 
-            description="¡Conectemos! Abierto a nuevas colaboraciones"
-            link="#"
-            icon={<MessageCircle className="w-6 h-6" />}
-            delay={400}
-          />
+              delay={300}
+            />
+            <LinkCard 
+              title="The Grid Newsletter" 
+              description="Suscríbete a mi newsletter para recibir contenido exclusivo"
+              link="https://cooperative-search-501.notion.site/The-Grid-Newsletter-28f191735b578086be20cb4aed0c25aa"
+              icon={<Mail className="w-6 h-6" />}
+              delay={350}
+            />
+            <LinkCard 
+              title="Contacto" 
+              description="¡Conectemos! Abierto a nuevas colaboraciones"
+              link="#"
+              icon={<MessageCircle className="w-6 h-6" />}
+              delay={400}
+            />
           </section>
 
           {/* Footer */}
