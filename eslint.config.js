@@ -23,6 +23,9 @@ export default tseslint.config(
         "warn",
         { allowConstantExport: true },
       ],
+      // Desactivar reglas problemáticas en el stack actual
+      "@typescript-eslint/no-unused-expressions": "off",
+      "no-unused-expressions": "off",
       "@typescript-eslint/no-unused-vars": "off",
     },
   }
