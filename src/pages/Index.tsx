@@ -64,7 +64,7 @@ const Index = () => {
           {/* Featured Project */}
           <section className="mb-12 animate-slide-up delay-250">
             <a
-              href="https://www.adquion.com"
+              href="https://adquion.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="group block relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/10 via-accent/5 to-primary/10 border border-border/50 p-6 hover:border-primary/30 transition-all duration-500 hover:shadow-xl"
